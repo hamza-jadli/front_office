@@ -1,5 +1,6 @@
 import Layout from '../layouts/Main';
 import Link from 'next/link';
+// @ts-ignore
 import { useForm } from "react-hook-form";
 import { server } from '../utils/server'; 
 import { postData } from '../utils/services'; 
@@ -9,8 +10,22 @@ type LoginMail = {
   password: string;
 }
 
+const resolver = async (values) => {
+  return {
+    values: values.email ? values : {},
+    errors: !values.email
+      ? {
+          email: {
+            type: 'required',
+            message: 'This is required.',
+          },
+        }
+      : {},
+  };
+};
+
 const LoginPage = () => {
-  const { register, handleSubmit, errors } = useForm();
+  const { register, handleSubmit, errors } = useForm<LoginMail>(resolver);
 
   const onSubmit = async (data: LoginMail) => {
     const res = await postData(`${server}/api/login`, {
@@ -41,17 +56,13 @@ const LoginPage = () => {
                   placeholder="email" 
                   type="text" 
                   name="email"
-                  ref={register({
-                    required: true,
-                    pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-                  })}
                 />
 
-                {errors.email && errors.email.type === 'required' && 
+                {errors?.email && errors.email.type === 'required' && 
                   <p className="message message--error">This field is required</p>
                 }
 
-                {errors.email && errors.email.type === 'pattern' && 
+                {errors?.email && errors.email.type === 'pattern' && 
                   <p className="message message--error">Please write a valid email</p>
                 }
               </div>
@@ -62,9 +73,8 @@ const LoginPage = () => {
                   type="password" 
                   placeholder="Password" 
                   name="password"
-                  ref={register({ required: true })}
-                />
-                {errors.password && errors.password.type === 'required' && 
+                                 />
+                {errors?.password && errors?.password?.type === 'required' && 
                   <p className="message message--error">This field is required</p>
                 }
               </div>
@@ -76,7 +86,6 @@ const LoginPage = () => {
                       type="checkbox" 
                       name="keepSigned" 
                       id="check-signed-in" 
-                      ref={register({ required: false })}
                     />
                     <span className="checkbox__check"></span>
                     <p>Keep me signed in</p>

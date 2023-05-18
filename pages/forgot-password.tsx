@@ -1,5 +1,6 @@
 import Layout from '../layouts/Main';
 import Link from 'next/link';
+// @ts-ignore
 import { useForm } from "react-hook-form";
 import { server } from '../utils/server'; 
 import { postData } from '../utils/services'; 
