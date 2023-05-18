@@ -1,5 +1,6 @@
 import Layout from '../layouts/Main';
 import Link from 'next/link';
+// @ts-ignore
 import { useForm } from "react-hook-form";
 
 
@@ -37,17 +38,14 @@ const ContactPage = () => {
                   placeholder="email" 
                   type="text" 
                   name="email"
-                  ref={register({
-                    required: true,
-                    pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-                  })}
+                 
                 />
 
-                {errors.email && errors.email.type === 'required' && 
+                {errors?.email && errors.email.type === 'required' && 
                   <p className="message message--error">This field is required</p>
                 }
 
-                {errors.email && errors.email.type === 'pattern' && 
+                {errors?.email && errors.email.type === 'pattern' && 
                   <p className="message message--error">Please write a valid email</p>
                 }
               </div>

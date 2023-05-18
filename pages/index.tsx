@@ -21,14 +21,14 @@ const IndexPage = () => {
           <article style={{backgroundImage: 'url(https://lh5.googleusercontent.com/0GMDYtCdNAoyIK0-995gbpiP4tvvFfs3OkFGzvAG_DF7r81-m2ot5CUMjHnc8uA3SQn2BwKlSt5IMaeGjG2hHT15STvrE33WWluzHF6uaWwJOIH3bRidyxdI2O6YUxog8I7OlV6u=w400-h300)'}} className="featured-item featured-item-small-first">
             <div className="featured-item__content">
               <h3>The coumpond effect <br/>29,99 MAD</h3>
-              <a href="#" className="btn btn--rounded">More details</a>
+              <a href="/product/2" className="btn btn--rounded">More details</a>
             </div>
           </article>
           
           <article style={{backgroundImage: 'url(https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1470082995i/29056083.jpg)'}} className="featured-item featured-item-small">
             <div className="featured-item__content">
               <h3>Harry Potter</h3>
-              <a href="#" className="btn btn--rounded">VIEW ALL</a>
+              <a href="/products" className="btn btn--rounded">VIEW ALL</a>
             </div>
           </article>
         </div>
