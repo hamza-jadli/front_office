@@ -42,9 +42,7 @@ const ShoppingCart = () => {
                     id={item.id}
                     thumb={item.thumb}
                     name={item.name}
-                    color={item.color}
                     price={item.price}
-                    size={item.size}
                     count={item.count}
                   />
                 ))}

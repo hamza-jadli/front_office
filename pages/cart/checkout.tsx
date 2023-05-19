@@ -1,6 +1,6 @@
 import Layout from '../../layouts/Main';
 import { useSelector } from 'react-redux';
-import CheckoutStatus from '../../components/checkout-status';
+//import CheckoutStatus from '../../components/checkout-status';
 import CheckoutItems from '../../components/checkout/items';
 import { RootState } from 'store';
 

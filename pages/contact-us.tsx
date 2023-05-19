@@ -5,7 +5,6 @@ import { useForm } from "react-hook-form";
 
 
 const ContactPage = () => {
-  const { register,  errors } = useForm();
 
  
 
@@ -41,13 +40,8 @@ const ContactPage = () => {
                  
                 />
 
-                {errors?.email && errors.email.type === 'required' && 
-                  <p className="message message--error">This field is required</p>
-                }
-
-                {errors?.email && errors.email.type === 'pattern' && 
-                  <p className="message message--error">Please write a valid email</p>
-                }
+               
+                
               </div>
               
               <div className="form__input-row">

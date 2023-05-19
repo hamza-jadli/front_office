@@ -14,7 +14,7 @@ export const products = [
    
   },
   {
-    id: 'The_coumpond_effect',
+    id: '2',
     name: 'The coumpond effect',
     price: 119.99,
     quantityAvailable: 2,

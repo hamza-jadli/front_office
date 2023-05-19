@@ -2,23 +2,23 @@ import Layout from '../layouts/Main';
 import Link from 'next/link';
 // @ts-ignore
 import { useForm } from "react-hook-form";
-import { server } from '../utils/server'; 
-import { postData } from '../utils/services'; 
+// import { server } from '../utils/server'; 
+// import { postData } from '../utils/services'; 
 
-type ForgotMail = {
-  email: string;
-}
+// type ForgotMail = {
+//   email: string;
+// }
 
 const ForgotPassword = () => {
-  const { register, handleSubmit, errors } = useForm();
+  // const { register, handleSubmit, errors } = useForm();
 
-  const onSubmit = async (data: ForgotMail) => {
-    const res = await postData(`${server}/api/login`, {
-      email: data.email,
-    });
+  // const onSubmit = async (data: ForgotMail) => {
+  //   const res = await postData(`${server}/api/login`, {
+  //     email: data.email,
+  //   });
 
-    console.log(res);
-  };
+  //   console.log(res);
+  // };
 
   return (
     <Layout>
@@ -34,7 +34,7 @@ const ForgotPassword = () => {
             <h2 className="form-block__title">Forgot your password?</h2>
             <p className="form-block__description">Enter your email or phone number and recover your account</p>
             
-            <form className="form" onSubmit={handleSubmit(onSubmit)}>
+            <form className="form" /* onSubmit={handleSubmit(onSubmit)}*/> 
               <div className="form__input-row">
                 <input 
                   className="form__input" 
@@ -44,13 +44,13 @@ const ForgotPassword = () => {
                  
                 />
 
-                {errors?.email && errors.email.type === 'required' && 
+                {/* {errors?.email && errors.email.type === 'required' && 
                   <p className="message message--error">This field is required</p>
                 }
 
                 {errors?.email && errors.email.type === 'pattern' && 
                   <p className="message message--error">Please write a valid email</p>
-                }
+                } */}
               </div>
               
               <div className="form__input-row">
@@ -61,9 +61,9 @@ const ForgotPassword = () => {
                   name="password"
                  
                 />
-                {errors?.password && errors.password.type === 'required' && 
+                {/* {errors?.password && errors.password.type === 'required' && 
                   <p className="message message--error">This field is required</p>
-                }
+                } */}
               </div>
 
               <button type="submit" className="btn btn--rounded btn--yellow btn-submit">Reset password</button>
