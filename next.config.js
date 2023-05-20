@@ -8,7 +8,7 @@ module.exports = {
     return [
       {
         source: '/admin/:path*',
-        destination: 'https://dashboard-gcpn.vercel.app/:path*',
+        destination: 'http://localhost:3001/admin/:path*',
       },
     ];
   },
