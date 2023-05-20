@@ -7,8 +7,8 @@ module.exports = {
   async rewrites() {
     return [
       {
-        source: '/admin/:path*',
-        destination: 'https://dashboard-gcpn.vercel.app/admin/:path*',
+        source: '/admine/:path*',
+        destination: 'https://dashboard-gcpn.vercel.app/admine/:path*',
       },
     ];
   },
