@@ -1,6 +1,6 @@
 export const products = [
   {
-    id: 'Harry-Potter',
+    id: '1',
     name: 'Harry Potter',
     price: 119.99,
     discount: 30,
